@@ -208,7 +208,7 @@ var applyCustomConfig = (function(){
      any config-file elements per platform that have the same target and parent, the last config-file element is used.
      */
     function getConfigFilesByTargetAndParent(platform) {
-        var configFileData = configXml.findall('platform[@name=\'' + platform + '\']/config-file');
+        var configFileData = fileUtils.getCustomConfigXml().findall('platform[@name=\'' + platform + '\']/config-file');
         var result = keyBy(configFileData, function(item) {
             var parent = item.attrib.parent;
 

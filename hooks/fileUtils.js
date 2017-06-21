@@ -41,6 +41,10 @@ var fileUtils = (function(){
         return configXmlData;
     };
 
+    fileUtils.getCustomConfigXml = function() {
+        return fileUtils.parseElementtreeSync(path.join(context.opts.projectRoot, 'custom-config-file.xml'));
+    };
+
     // Returns plugin settings from config.xml
     fileUtils.getSettings = function (){
         if(!settings){
